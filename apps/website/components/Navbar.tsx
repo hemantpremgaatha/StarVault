@@ -16,7 +16,7 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo.png`} alt="StarVault" width={300} height={300} className="h-12 w-12" />
+          <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo.png`} alt="StarVault" width={500} height={500} className="h-12 w-12 object-contain" />
         </Link>
         <div className="hidden items-center gap-6 text-sm font-bold text-slate-300 md:flex">
           {links.map(([label, href]) => (

@@ -35,7 +35,7 @@ export default function VisionPage() {
         <div className="mx-auto max-w-7xl">
           <p className="text-sm font-black uppercase tracking-normal text-cyan">North star</p>
           <h2 className="mt-3 max-w-4xl text-4xl font-black text-white md:text-6xl">
-            People should not say, "I use StarVault." They should say, "This app supports StarVault."
+            People should not say, &ldquo;I use StarVault.&rdquo; They should say, &ldquo;This app supports StarVault.&rdquo;
           </h2>
         </div>
       </section>

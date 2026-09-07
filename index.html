@@ -4,31 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>StarVault</title>
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,500&family=Libre+Franklin:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="app-shell">
       <aside class="sidebar" aria-label="Primary">
         <div class="brand">
-          <div class="brand-mark">SV</div>
+          <img class="brand-mark" src="logo.png" alt="StarVault logo" />
           <div>
             <h1>StarVault</h1>
             <p>Personal data ownership</p>
           </div>
         </div>
         <nav class="nav-list">
-          <button class="nav-item active" data-view="dashboard">Dashboard</button>
-          <button class="nav-item" data-view="vault">Vault</button>
-          <button class="nav-item" data-view="identity">Identity</button>
-          <button class="nav-item" data-view="permissions">Permissions</button>
-          <button class="nav-item" data-view="barrier">Data Barrier</button>
-          <button class="nav-item" data-view="protocol">Protocol</button>
-          <button class="nav-item" data-view="roadmap">Roadmap</button>
-          <button class="nav-item" data-view="network">Network Layer</button>
-          <button class="nav-item" data-view="surveillance">Surveillance Map</button>
-          <button class="nav-item" data-view="imports">Imports</button>
-          <button class="nav-item" data-view="scanner">AI Scanner</button>
-          <button class="nav-item" data-view="logs">Access Logs</button>
+          <div class="nav-group">
+            <p class="nav-group-label">Personal</p>
+            <button class="nav-item active" data-view="dashboard">Dashboard</button>
+            <button class="nav-item" data-view="vault">Vault</button>
+            <button class="nav-item" data-view="identity">Identity</button>
+            <button class="nav-item" data-view="imports">Imports</button>
+          </div>
+          <div class="nav-group">
+            <p class="nav-group-label">Protection</p>
+            <button class="nav-item" data-view="permissions">Permissions</button>
+            <button class="nav-item" data-view="barrier">Data Barrier</button>
+            <button class="nav-item" data-view="surveillance">Surveillance Map</button>
+            <button class="nav-item" data-view="scanner">AI Scanner</button>
+          </div>
+          <div class="nav-group">
+            <p class="nav-group-label">Network</p>
+            <button class="nav-item" data-view="network">Network Layer</button>
+            <button class="nav-item" data-view="protocol">Protocol</button>
+            <button class="nav-item" data-view="roadmap">Roadmap</button>
+            <button class="nav-item" data-view="logs">Access Logs</button>
+          </div>
         </nav>
         <div class="sidebar-footer">
           <p class="eyebrow">Positioning</p>
@@ -67,41 +79,43 @@
         <section id="app-content" class="content hidden">
           <section class="view active" id="dashboard">
             <div class="metric-grid">
-              <article class="metric">
+              <article class="metric metric-hero">
                 <span>Privacy Score</span>
                 <strong id="privacy-score">86</strong>
                 <p>Based on exposed fields, risky permissions, and recent access.</p>
               </article>
-              <article class="metric">
-                <span>Vault Items</span>
-                <strong id="vault-count">0</strong>
-                <p>Encrypted records stored in your personal vault.</p>
-              </article>
-              <article class="metric">
-                <span>Active Permissions</span>
-                <strong id="permission-count">0</strong>
-                <p>Apps and companies with current data access.</p>
-              </article>
-              <article class="metric">
-                <span>Risk Alerts</span>
-                <strong id="risk-count">0</strong>
-                <p>Scanner findings that deserve attention.</p>
-              </article>
-              <article class="metric">
-                <span>Extraction Attempts</span>
-                <strong id="extraction-count">0</strong>
-                <p>Requests flagged as data extraction or profiling.</p>
-              </article>
-              <article class="metric">
-                <span>Network Tokens</span>
-                <strong id="token-count">0</strong>
-                <p>Scoped, revocable grants issued through StarVault.</p>
-              </article>
-              <article class="metric">
-                <span>Ledger Events</span>
-                <strong id="ledger-count">0</strong>
-                <p>Data transactions recorded for user visibility.</p>
-              </article>
+              <div class="metric-secondary">
+                <article class="metric">
+                  <span>Vault Items</span>
+                  <strong id="vault-count">0</strong>
+                  <p>Encrypted records stored in your personal vault.</p>
+                </article>
+                <article class="metric">
+                  <span>Active Permissions</span>
+                  <strong id="permission-count">0</strong>
+                  <p>Apps and companies with current data access.</p>
+                </article>
+                <article class="metric">
+                  <span>Risk Alerts</span>
+                  <strong id="risk-count">0</strong>
+                  <p>Scanner findings that deserve attention.</p>
+                </article>
+                <article class="metric">
+                  <span>Extraction Attempts</span>
+                  <strong id="extraction-count">0</strong>
+                  <p>Requests flagged as data extraction or profiling.</p>
+                </article>
+                <article class="metric">
+                  <span>Network Tokens</span>
+                  <strong id="token-count">0</strong>
+                  <p>Scoped, revocable grants issued through StarVault.</p>
+                </article>
+                <article class="metric">
+                  <span>Ledger Events</span>
+                  <strong id="ledger-count">0</strong>
+                  <p>Data transactions recorded for user visibility.</p>
+                </article>
+              </div>
             </div>
 
             <section class="resistance-banner">

@@ -1,35 +1,19 @@
 from fastapi import FastAPI
-from pydantic import BaseModel, EmailStr
 
-app = FastAPI(title="StarVault Identity Service", version="0.1.0")
+from app.db import Base, engine
+from app.routers.identity import router as identity_router
 
-
-class UserCreate(BaseModel):
-    email: EmailStr
-    password: str
-    display_name: str
+app = FastAPI(title="StarVault Identity Service", version="0.2.0")
+app.include_router(identity_router)
 
 
-class LoginRequest(BaseModel):
-    email: EmailStr
-    password: str
+@app.on_event("startup")
+def create_tables() -> None:
+    # Table creation via create_all is fine for this stage of the project;
+    # swap for Alembic migrations before this touches real user data.
+    Base.metadata.create_all(bind=engine)
 
 
-@app.post("/users")
-def create_user(payload: UserCreate) -> dict:
-    return {"id": "user_demo", "email": payload.email, "display_name": payload.display_name}
-
-
-@app.post("/login")
-def login(payload: LoginRequest) -> dict:
-    return {"access_token": "demo.jwt.token", "token_type": "bearer"}
-
-
-@app.get("/profile")
-def profile() -> dict:
-    return {"id": "user_demo", "email": "demo@starvault.local", "status": "active"}
-
-
-@app.delete("/users/{user_id}")
-def delete_user(user_id: str) -> dict:
-    return {"id": user_id, "deleted": True}
+@app.get("/health")
+def health() -> dict:
+    return {"ok": True, "service": "identity"}
