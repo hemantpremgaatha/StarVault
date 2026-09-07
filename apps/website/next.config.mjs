@@ -7,6 +7,9 @@ const nextConfig = {
   trailingSlash: true,
   basePath: isGithubPages ? "/StarVault" : "",
   assetPrefix: isGithubPages ? "/StarVault/" : "",
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isGithubPages ? "/StarVault" : ""
+  },
   images: {
     unoptimized: true
   },

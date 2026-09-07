@@ -46,67 +46,20 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative min-h-[520px]">
-          <svg viewBox="0 0 640 640" className="absolute inset-0 h-full w-full" role="img" aria-label="Human data network">
-            <defs>
-              <radialGradient id="sphere" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="#ffffff" stopOpacity="0.9" />
-                <stop offset="42%" stopColor="#3B82F6" stopOpacity="0.34" />
-                <stop offset="100%" stopColor="#22D3EE" stopOpacity="0.03" />
-              </radialGradient>
-              <filter id="glow">
-                <feGaussianBlur stdDeviation="4" result="coloredBlur" />
-                <feMerge>
-                  <feMergeNode in="coloredBlur" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-            </defs>
-            <circle cx="320" cy="320" r="168" fill="url(#sphere)" stroke="#3B82F6" strokeOpacity="0.3" />
-            <circle cx="320" cy="320" r="236" fill="none" stroke="#ffffff" strokeOpacity="0.08" />
-            <circle cx="320" cy="320" r="292" fill="none" stroke="#22D3EE" strokeOpacity="0.08" />
-
-            {[
-              [320, 118, 168, 210],
-              [320, 118, 478, 212],
-              [168, 210, 220, 438],
-              [478, 212, 420, 440],
-              [220, 438, 420, 440],
-              [168, 210, 320, 320],
-              [478, 212, 320, 320],
-              [220, 438, 320, 320],
-              [420, 440, 320, 320]
-            ].map(([x1, y1, x2, y2], index) => (
-              <line
-                key={index}
-                x1={x1}
-                y1={y1}
-                x2={x2}
-                y2={y2}
-                stroke="#22D3EE"
-                strokeOpacity="0.34"
-                strokeWidth="1.5"
-                className="connection-draw"
-                style={{ animationDelay: `${index * 0.18 + 0.7}s` }}
-              />
-            ))}
-
-            {[
-              [320, 118, "People"],
-              [168, 210, "AI"],
-              [478, 212, "Apps"],
-              [220, 438, "Vaults"],
-              [420, 440, "Consent"],
-              [320, 320, "Human Data"]
-            ].map(([cx, cy, label], index) => (
-              <g key={label} className="node-pulse" style={{ animationDelay: `${index * 0.25}s` }} filter="url(#glow)">
-                <circle cx={cx as number} cy={cy as number} r={label === "Human Data" ? 20 : 12} fill={label === "Human Data" ? "#ffffff" : "#22D3EE"} />
-                <text x={cx as number} y={(cy as number) + 34} textAnchor="middle" fill="#e2e8f0" fontSize="14" fontWeight="700">
-                  {label}
-                </text>
-              </g>
-            ))}
-          </svg>
+        <div className="relative flex min-h-[520px] items-center justify-center">
+          <div className="absolute h-[420px] w-[420px] rounded-full bg-cyan/10 blur-3xl" />
+          <div className="relative aspect-square w-full max-w-[420px] overflow-hidden rounded-3xl border border-cyan/30 bg-white shadow-[0_0_60px_rgba(34,211,238,0.25)]">
+            <video
+              className="h-full w-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/videos/starvault-logo-poster.jpg`}
+            >
+              <source src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/videos/starvault-logo.mp4`} type="video/mp4" />
+            </video>
+          </div>
         </div>
       </div>
     </section>
