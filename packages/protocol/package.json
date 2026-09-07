@@ -4,5 +4,12 @@
   "private": true,
   "type": "module",
   "main": "src/index.ts",
-  "types": "src/index.ts"
+  "types": "src/index.ts",
+  "dependencies": {
+    "@starvault/service-identity": "0.1.0",
+    "@starvault/service-vault": "0.1.0",
+    "@starvault/service-consent": "0.1.0",
+    "@starvault/service-gateway": "0.1.0",
+    "@starvault/service-audit": "0.1.0"
+  }
 }
