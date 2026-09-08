@@ -123,3 +123,11 @@ Users may opt into anonymized insights, licensed data access, research participa
 ## Important prototype note
 
 This MVP encrypts data locally in the browser. A production StarVault should add backend authentication, secure key recovery, hardware-backed key options, API audit infrastructure, compliance review, and independent security testing.
+
+## Sponsor StarVault
+
+StarVault is built in public, and the consumer vault/dashboard stay free by design — that's core to the trust model. If you'd like to support development, funding goes toward core service development, infrastructure costs, and maintaining the StarVault Protocol spec and SDKs.
+
+Sponsor tiers and details: [FUNDING.md](FUNDING.md)
+
+[![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-db61a2?logo=github-sponsors&logoColor=white)](https://github.com/sponsors/harshutxo)
