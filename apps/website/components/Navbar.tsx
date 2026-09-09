@@ -7,7 +7,8 @@ const links = [
   ["Roadmap", "/roadmap"],
   ["Docs", "/docs"],
   ["Whitepaper", "/whitepaper"],
-  ["Community", "/community"]
+  ["Community", "/community"],
+  ["Join protocol", "/contact"]
 ];
 
 export function Navbar() {
@@ -25,8 +26,8 @@ export function Navbar() {
             </Link>
           ))}
         </div>
-        <Link href="/contact" className="rounded-card border border-cyan/40 bg-cyan/10 px-4 py-2 text-sm font-black text-cyan">
-          Join protocol
+        <Link href="/app" className="rounded-card border border-cyan/40 bg-cyan/10 px-4 py-2 text-sm font-black text-cyan">
+          Launch app
         </Link>
       </nav>
     </header>
