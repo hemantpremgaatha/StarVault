@@ -64,6 +64,7 @@ The original static prototype still lives at the repository root and can be run 
 
 ## Protocol docs
 
+- [Founding doctrine](docs/PHILOSOPHY.md)
 - [Protocol architecture](docs/PROTOCOL.md)
 - [Data Access Barrier](docs/DATA_ACCESS_BARRIER.md)
 - [API draft](docs/API.md)
